@@ -1,5 +1,6 @@
 package com.maho_ya.viewbindingexample
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.maho_ya.viewbindingexample.databinding.ActivityMainBinding
@@ -31,5 +32,11 @@ class MainActivity : AppCompatActivity() {
 
         // 以上で任意のビューを参照できるようになる
         binding.textView.text = "BindingTest"
+
+        binding.openSubActivityButton.setOnClickListener {
+            val intent = Intent(this, SubActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
